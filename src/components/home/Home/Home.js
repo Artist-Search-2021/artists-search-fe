@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import ArtistList from '../../display/ArtistList';
 import Loading from '../../common/Loading';
-import Search from '../../Controls/Search';
+import Search from '../../controls/Search';
 import { fetchArtists } from '../../../services/artistApi.js';
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
     <div>
       <p>Search artists</p>
       <Search onSearch={handleSearch} />
-      {/* <ArtistList artist={artists}/> */}
+      <ArtistList artists={artists} />
     </div>
   );
 }
