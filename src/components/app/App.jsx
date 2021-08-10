@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
-import Artist from '../display/Artist';
+import ArtistReleases from '../display/ArtistReleases';
 import Header from '../common/Header';
 import Home from '../home/Home/Home';
 
@@ -11,7 +11,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path='/artist/:id' component={Artist}></Route>
+        <Route exact path="/artist/:id" component={ArtistReleases}></Route>
         <Redirect to="/" />
       </Switch>
     </Router>

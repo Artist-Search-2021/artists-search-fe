@@ -6,14 +6,15 @@ import { fetchArtists } from '../../../services/artistApi.js';
 
 export default function Home() {
   const [artists, setArtists] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = (searchTerm) => {
+    setLoading(true);
     fetchArtists(0, searchTerm).then(setArtists).finally(() => setLoading(false));
-    console.log(searchTerm);
+  
   };
 
-
+  if(loading) return <Loading />;
   return (
     <div>
       <p>Search artists</p>
