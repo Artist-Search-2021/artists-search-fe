@@ -9,13 +9,45 @@ export default function ArtistReleases() {
   // loading state
   //return releases w/ pictures
   //fetch pic for each release
+
+  const getImage = async (id) => {
+    const image = await fetch(`http://coverartarchive.org/release/${id}/front`);
+    
+    if(image.status === 200) {
+      console.log(image, '----------');
+      return image.url;
+    } else {
+      return 'http://placehold.it/300x300';
+    }
+  };
+  
+  
+
+  const releaseElements = async releases.map(release => {
+    getImage(release.id);
+    
+    return (
+      <li key={release.id}>
+        <p>{release.title}</p>
+        
+        <img style={{ width: '200px' }} 
+          src={await getImage(release.id)}
+        />
+      </li>
+    );
+  });
+
+ 
+
   if(loading) return <Loading/>;
   return (
     <div>
-    Hi
-      {/* <ReleaseList releases={releases}/> */}
+      <ul>
+        {releaseElements}
+      </ul>
     </div>
   );
+  
 }
 
 
