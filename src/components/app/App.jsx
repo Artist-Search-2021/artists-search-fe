@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 import Header from '../common/Header';
+import Home from '../home/Home/Home';
 
 export default function App() {
   return (<div className="App">
