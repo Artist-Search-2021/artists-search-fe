@@ -8,23 +8,6 @@ export default function ArtistReleases() {
   let artistName = useLocation();
   console.log(artistName);
   console.log(releases);
-  //fetch the id from params
-  // loading state
-  //return releases w/ pictures
-  //fetch pic for each release
-
-  // const getImage = async (id) => {
-  //   const image = await fetch(`http://coverartarchive.org/release/${id}/front`);
-
-  //   if(image.status === 200) {
-  //     console.log(image, '----------');
-  //     return image.url;
-  //   } else {
-  //     return 'http://placehold.it/300x300';
-  //   }
-  // };
-
-
 
   const releaseElements = releases.map(release => {
 
