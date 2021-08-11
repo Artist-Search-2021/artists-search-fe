@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 export default function ArtistList({ artists }) {
-  console.log(artists);
+ 
   const artistsElements = artists.map(artist => (
     <li key={artist.id}>
       <p><Link to={{

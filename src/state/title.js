@@ -14,7 +14,7 @@ const useTitle = () => {
       .finally(setLoading(false));
   }, []);
 
-  return [titles, id]
+  return [titles, loading];
 };
 
 export default useTitle;

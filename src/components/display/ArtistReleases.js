@@ -4,10 +4,9 @@ import Loading from '../common/Loading';
 import { useLocation, Link } from 'react-router-dom';
 
 export default function ArtistReleases() {
-  const [releases, loading, artistId] = useRelease();
-  let artistName = useLocation();
-  console.log(artistName);
-  console.log(releases);
+  const [releases, loading] = useRelease();
+  const artistName = useLocation();
+ 
 
   const releaseElements = releases.map(release => {
 
@@ -15,7 +14,7 @@ export default function ArtistReleases() {
       <li key={release.id}>
         <Link to={{
           pathname: `/release/${release.id}`,
-          state: { artistName: artistName }
+          state: { artistName }
         }}>
           <p>{release.title}</p>
 
@@ -29,7 +28,7 @@ export default function ArtistReleases() {
 
 
 
-  if (loading) return <Loading />;
+  if(loading) return <Loading />;
   return (
     <div>
       <ul>
