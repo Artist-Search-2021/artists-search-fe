@@ -14,8 +14,8 @@ const useRelease = () => {
       .finally(() => setLoading(false));
   }, []);
 
-    
-  return [releases, loading];
+
+  return [releases, loading, id];
 };
 
 export default useRelease;
