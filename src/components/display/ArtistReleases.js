@@ -1,7 +1,7 @@
 import React from 'react';
 import useRelease from '../../state/release';
 import Loading from '../common/Loading';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 export default function ArtistReleases() {
   const [releases, loading, artistId] = useRelease();
@@ -30,11 +30,16 @@ export default function ArtistReleases() {
 
     return (
       <li key={release.id}>
-        <p>{release.title}</p>
+        <Link to={{
+          pathname: `/release/${release.id}`,
+          state: { artistName: artistName }
+        }}>
+          <p>{release.title}</p>
 
-        <img style={{ width: '200px' }}
-          src={`http://coverartarchive.org/release/${release.id}/front`}
-        />
+          <img style={{ width: '200px' }}
+            src={`http://coverartarchive.org/release/${release.id}/front`}
+          />
+        </Link>
       </li>
     );
   });
