@@ -27,6 +27,7 @@ describe('artistSearch', () => {
     fireEvent.submit(input);
     const list = await screen.findByRole('list');
     expect(list).not.toBeEmptyDOMElement();
+    expect(list.children.length).toEqual(25);
  
   });
   it('displays a list of recordings', async ()  => {
@@ -37,6 +38,8 @@ describe('artistSearch', () => {
     ); 
     const list = await screen.findByRole('list');
     expect(list).not.toBeEmptyDOMElement();
+    expect(list.children.length).toEqual(12);
+
     console.log(list);
   });
 });
