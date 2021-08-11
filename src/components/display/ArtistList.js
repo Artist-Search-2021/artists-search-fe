@@ -17,5 +17,5 @@ export default function ArtistList({ artists }) {
     <div>
       <ul>{artistsElements}</ul>
     </div>
-  )
-};
+  );
+}

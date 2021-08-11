@@ -9,16 +9,16 @@ import Home from '../home/Home/Home';
 
 export default function App() {
   return (<div className="App">
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/artist/:id" component={ArtistReleases}></Route>
-        <Route exact path="/release/:id" component={ReleaseDetail}></Route>
-        <Route exact path="/release/lyrics/:id" component={SongLyrics}></Route>
-        <Redirect to="/" />
-      </Switch>
-    </Router>
+   
+    <Header />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/artist/:id" component={ArtistReleases}></Route>
+      <Route exact path="/release/:id" component={ReleaseDetail}></Route>
+      <Route exact path="/release/lyrics/:id" component={SongLyrics}></Route>
+      <Redirect to="/" />
+    </Switch>
+    
 
   </div>);
 }

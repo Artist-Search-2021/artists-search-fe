@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`artistSearch displays a list of artists 1`] = `
+<DocumentFragment>
+  <div>
+    <form>
+      <input
+        name="input"
+        placeholder="Search artist"
+        type="text"
+        value=""
+      />
+    </form>
+  </div>
+</DocumentFragment>
+`;
