@@ -38,7 +38,7 @@ export default function ArtistReleases() {
 
           <img style={{ width: '200px' }}
             src={`http://coverartarchive.org/release/${release.id}/front`}
-          />
+            onError={(e) => (e.target.onerror = null, e.target.src = '/public/placeholder.png')} />
         </Link>
       </li>
     );
