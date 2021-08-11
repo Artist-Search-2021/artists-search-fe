@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useRelease from '../../state/release';
 import Loading from '../common/Loading';
 import { useLocation, Link } from 'react-router-dom';
 
 export default function ArtistReleases() {
-  const [releases, loading] = useRelease();
+  const [page, setPage] = useState(0);
+  const [releases, loading] = useRelease(page);
   const artistName = useLocation();
- 
 
   const releaseElements = releases.map(release => {
 
@@ -26,12 +26,16 @@ export default function ArtistReleases() {
     );
   });
 
+  const handlePageChange = (newPage) => {
+    setPage(prevPage => prevPage + newPage);
+  };
 
-
-  if(loading) return <Loading />;
+  if (loading) return <Loading />;
   return (
     <div>
       <ul>
+        <button onClick={() => handlePageChange(-10)} disabled={page <= 0}>←</button>
+        <button onClick={() => handlePageChange(10)}>→</button>
         {releaseElements}
       </ul>
     </div>

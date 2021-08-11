@@ -9,6 +9,7 @@ export default function Home() {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearch] = useState('');
+
   useEffect(() => {
     if (searchTerm !== '') {
       setLoading(true);
@@ -26,11 +27,7 @@ export default function Home() {
 
   const handlePageChange = (newPage) => {
     setPage(prevPage => prevPage + newPage);
-    // setLoading(true);
-    // console.log(newPage);
-    // fetchArtists(newPage, searchTerm).then(setArtists).finally(() => setLoading(false));
   };
-
 
   if (loading) return <Loading />;
   return (

@@ -2,20 +2,18 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { fetchReleases } from '../services/releasesApi';
 
-
-const useRelease = () => {
+const useRelease = (page) => {
   const [releases, setReleases] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  
+
   useEffect(() => {
-    fetchReleases(id)
+    fetchReleases(page, id)
       .then(setReleases)
       .finally(() => setLoading(false));
-  }, []);
+  }, [page]);
 
-
-  return [releases, loading, id];
+  return [releases, loading];
 };
 
 export default useRelease;
