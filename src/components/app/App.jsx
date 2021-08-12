@@ -6,10 +6,11 @@ import ReleaseDetail from '../display/ReleaseDetail';
 import SongLyrics from '../display/SongLyrics';
 import Header from '../common/Header';
 import Home from '../home/Home';
+import './App.css'
 
 export default function App() {
   return (<div className="App">
-   
+
     <Header />
     <Switch>
       <Route exact path="/" component={Home} />
@@ -18,7 +19,7 @@ export default function App() {
       <Route exact path="/release/lyrics/:id" component={SongLyrics}></Route>
       <Redirect to="/" />
     </Switch>
-    
+
 
   </div>);
 }

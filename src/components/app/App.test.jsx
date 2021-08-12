@@ -52,7 +52,7 @@ describe('artistSearch', () => {
     );
     const list = await screen.findByRole('list');
     expect(list).not.toBeEmptyDOMElement();
-    expect(list.children.length).toEqual(12);
+    expect(list.children.length).toEqual(10);
 
 
   });
@@ -78,7 +78,7 @@ describe('artistSearch', () => {
       </MemoryRouter>
     );
     const lyrics = await screen.findByTestId('lyrics');
-    expect(lyrics).toBeEmptyDOMElement();
+    expect(lyrics).not.toBeEmptyDOMElement();
   });
 
 });
