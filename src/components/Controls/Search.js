@@ -1,5 +1,5 @@
 import React from 'react';
-import useSearch from '../../state/search';
+import useSearch from '../../state/search.js';
 
 export default function Search({ onSearch }) {
   const [searchTerm, onChange] = useSearch();
