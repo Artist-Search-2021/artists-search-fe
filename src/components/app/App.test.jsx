@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, getByPlaceholderText, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+
 
 import App from './App';
 
@@ -77,10 +77,16 @@ describe('artistSearch', () => {
         <App />
       </MemoryRouter>
     );
-    const list = await screen.findByRole('list');
-    expect(list).not.toBeEmptyDOMElement();
-    expect(list.children.length).toEqual(8);
+    // await screen.findAllByRole('img');
+    // expect(image).not.
+    setTimeout(async () => {
+      const list = await screen.findByRole('list');
+      expect(list).not.toBeEmptyDOMElement();
+      expect(list.children.length).toEqual(8);     
+    }, 1000);
   });
+
+ 
 });
 
 // {
