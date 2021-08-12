@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { fetchTitles } from '../services/titlesApi';
+import { fetchTitles } from '../services/titlesApi.js';
 
 const useTitle = () => {
   const [titles, setTitles] = useState([]);

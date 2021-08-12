@@ -30,7 +30,7 @@ export default function ArtistReleases() {
     setPage(prevPage => prevPage + newPage);
   };
 
-  if (loading) return <Loading />;
+  if(loading) return <Loading />;
   return (
     <div>
       <ul>
