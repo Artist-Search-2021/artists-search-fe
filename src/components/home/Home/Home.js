@@ -11,17 +11,15 @@ export default function Home() {
   const [searchTerm, setSearch] = useState('');
 
   useEffect(() => {
-    if(searchTerm !== '') {
+    if (searchTerm !== '') {
       setLoading(true);
       fetchArtists(page, searchTerm).then(setArtists).finally(setLoading(false));
     }
   }, [page]);
 
-
   const handleSearch = (searchTerm) => {
     setLoading(true);
     fetchArtists(page, searchTerm).then(setArtists).finally(() => setLoading(false));
-    console.log(searchTerm,);
     setSearch(searchTerm);
   };
 

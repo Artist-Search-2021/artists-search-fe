@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 export default function ArtistList({ artists }) {
- 
+
   const artistsElements = artists.map(artist => (
     <li key={artist.id}>
       <p><Link to={{

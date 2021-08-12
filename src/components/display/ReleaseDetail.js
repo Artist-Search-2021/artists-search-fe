@@ -7,8 +7,6 @@ export default function ReleaseDetail() {
   const [titles, loading] = useTitle();
   const artistName = useLocation();
   const name = artistName.state.artistName.state.artistName;
-  
-  console.log(name);
 
   const releaseDetailElements = titles.map(title => {
     return (
@@ -22,7 +20,7 @@ export default function ReleaseDetail() {
       </li>
     );
   });
-  if(loading) return <Loading />;
+  if (loading) return <Loading />;
   return (
     <div className="ReleaseDetail">
       <h1>Release Detail</h1>

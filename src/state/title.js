@@ -6,8 +6,6 @@ const useTitle = () => {
   const [titles, setTitles] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  console.log(id);
-
 
   useEffect(() => {
     fetchTitles(id)

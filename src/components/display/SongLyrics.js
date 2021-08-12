@@ -10,7 +10,6 @@ export default function SongLyrics() {
   const { id } = useParams();
   const artistName = useLocation();
   const name = artistName.state.artistName;
-  
 
   useEffect(() => {
     fetchLyrics(name, id)
@@ -18,9 +17,9 @@ export default function SongLyrics() {
       .finally(setLoading(false));
   }, []);
 
-  if(loading) return <Loading />; 
+  if (loading) return <Loading />;
   return (
-    <div>
+    <div data-testid='lyrics'>
       {lyrics}
     </div>
   );
