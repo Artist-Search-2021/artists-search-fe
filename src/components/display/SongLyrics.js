@@ -33,7 +33,7 @@ export default function SongLyrics() {
   useEffect(() => {
     fetchLyrics(name, id)
       .then(lyrics => setLyrics(lyrics))
-      .finally(setLoading(false));
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <Loading />;
