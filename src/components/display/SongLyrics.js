@@ -17,9 +17,9 @@ export default function SongLyrics() {
       .finally(setLoading(false));
   }, []);
 
-  if (loading) return <Loading />;
+  if(loading) return <Loading />;
   return (
-    <div data-testid='lyrics'>
+    <div data-testid="lyrics">
       {lyrics}
     </div>
   );
