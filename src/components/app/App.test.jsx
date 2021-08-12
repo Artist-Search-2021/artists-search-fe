@@ -71,15 +71,15 @@ describe('artistSearch', () => {
     }, 1000);
   });
 
-  // it('displays song lyrics', async () => {
-  //   render(
-  //     <MemoryRouter initialEntries={['/release/lyrics/Lonestar']}>
-  //       <App />
-  //     </MemoryRouter>
-  //   );
-  //   const lyrics = await screen.findByTestId('lyrics');
-  //   expect(lyrics).toBeEmptyDOMElement();
-  // });
+  it('displays song lyrics', async () => {
+    render(
+      <MemoryRouter initialEntries={['/release/lyrics/Lonestar']}>
+        <App />
+      </MemoryRouter>
+    );
+    const lyrics = await screen.findByTestId('lyrics');
+    expect(lyrics).toBeEmptyDOMElement();
+  });
 
 });
 
