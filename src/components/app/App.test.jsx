@@ -5,6 +5,32 @@ import userEvent from '@testing-library/user-event';
 import App from './App';
 
 import { MemoryRouter } from 'react-router-dom';
+import ReleaseDetail from '../display/ReleaseDetail';
+
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'), 
+  useLocation: () => ({
+        
+        
+    'pathname': '/release/21e8c81d-6d12-48a9-ad47-b371ca2c166b',
+    'search': '',
+    'hash': '',
+    'state': {
+      'artistName': {
+        'pathname': '/artist/0743b15a-3c32-48c8-ad58-cb325350befa',
+        'state': {
+          'artistName': 'blink‐182'
+        },
+        'search': '',
+        'hash': '',
+        'key': 'fzjh2b'
+      }
+    },
+    'key': '97cgva'
+      
+  })
+}));
 
 describe('artistSearch', () => {
   it('displays a list of artists', async ()  => {
@@ -40,6 +66,33 @@ describe('artistSearch', () => {
     expect(list).not.toBeEmptyDOMElement();
     expect(list.children.length).toEqual(12);
 
-    console.log(list);
+    
+  });
+
+  it('displays a list of song titles', async () => {
+    
+
+    render(
+      <MemoryRouter initialEntries={['/release/21e8c81d-6d12-48a9-ad47-b371ca2c166b']}>
+        <App />
+      </MemoryRouter>
+    );
+    const list = await screen.findByRole('list');
+    expect(list).not.toBeEmptyDOMElement();
+    expect(list.children.length).toEqual(8);
   });
 });
+
+// {
+//   'state': {
+//     'artistName': {
+//       'pathname': '/artist/0743b15a-3c32-48c8-ad58-cb325350befa',
+//       'state': {
+//         'artistName': 'blink‐182'
+//       },
+//       'search': '',
+//       'hash': '',
+//       'key': 'fzjh2b'
+//     }
+//   }
+// }

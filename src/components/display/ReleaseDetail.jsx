@@ -7,7 +7,8 @@ export default function ReleaseDetail() {
   const [titles, loading] = useTitle();
   const artistName = useLocation();
   const name = artistName.state.artistName.state.artistName;
-
+  
+  console.log(name);
 
   const releaseDetailElements = titles.map(title => {
     return (
