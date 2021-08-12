@@ -12,7 +12,7 @@ export default function Home() {
   const [searchTerm, setSearch] = useState('');
 
   useEffect(() => {
-    if(searchTerm !== '') {
+    if (searchTerm !== '') {
       setLoading(true);
       fetchArtists(page, searchTerm).then(setArtists).finally(setLoading(false));
     }
@@ -28,14 +28,14 @@ export default function Home() {
     setPage(prevPage => prevPage + newPage);
   };
 
-  if(loading) return <Loading />;
+  if (loading) return <Loading />;
   return (
     <div>
       <p>Search artists</p>
       <Search onSearch={handleSearch} />
       <ArtistList artists={artists} />
       <button onClick={() => handlePageChange(-25)} disabled={page <= 0}>←</button>
-      <button onClick={() => handlePageChange(25)}>→</button>
+      <button onClick={() => handlePageChange(25)} disabled={!searchTerm}>→</button>
     </div>
   );
 }
