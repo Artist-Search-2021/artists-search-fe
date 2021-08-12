@@ -2,16 +2,38 @@ import React from 'react';
 import useTitle from '../../state/title';
 import Loading from '../common/Loading';
 import { useLocation, Link } from 'react-router-dom';
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles({
+  detailContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  li: {
+    listStyle: 'none',
+  },
+  link: {
+    color: 'black'
+  },
+  ul: {
+    padding: 0
+  }
+});
 
 export default function ReleaseDetail() {
   const [titles, loading] = useTitle();
   const artistName = useLocation();
   const name = artistName.state.artistName.state.artistName;
 
+  const classes = useStyles();
+
   const releaseDetailElements = titles.map(title => {
     return (
-      <li key={title.id}>
-        <Link to={{
+      <li className={classes.li} key={title.id}>
+        <Link className={classes.link} to={{
           pathname: `/release/lyrics/${title.title}`,
           state: { artistName: name }
         }}>
@@ -20,11 +42,11 @@ export default function ReleaseDetail() {
       </li>
     );
   });
-  if(loading) return <Loading />;
+  if (loading) return <Loading />;
   return (
-    <div className="ReleaseDetail">
-      <h1>Release Detail</h1>
-      <ul>{releaseDetailElements}</ul>
+    <div className={classes.detailContainer}>
+      <h2>Tracklist</h2>
+      <ul className={classes.ul}>{releaseDetailElements}</ul>
     </div>
   );
 }
