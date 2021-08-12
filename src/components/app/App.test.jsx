@@ -1,11 +1,7 @@
 import React from 'react';
-import { fireEvent, render, getByPlaceholderText, screen } from '@testing-library/react';
-
-
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
-
 import { MemoryRouter } from 'react-router-dom';
-import ReleaseDetail from '../display/ReleaseDetail';
 
 
 jest.mock('react-router-dom', () => ({
@@ -49,7 +45,6 @@ describe('artistSearch', () => {
     const input = screen.getByPlaceholderText('Search artist');
     fireEvent.change(input, { target: { value: 'Prince' } });  
     expect(input.value).toBe('Prince');
-    // fireEvent.keyPress(input, { key: 'Enter', code: 'Enter' });
     fireEvent.submit(input);
     const list = await screen.findByRole('list');
     expect(list).not.toBeEmptyDOMElement();
@@ -77,8 +72,7 @@ describe('artistSearch', () => {
         <App />
       </MemoryRouter>
     );
-    // await screen.findAllByRole('img');
-    // expect(image).not.
+   
     setTimeout(async () => {
       const list = await screen.findByRole('list');
       expect(list).not.toBeEmptyDOMElement();

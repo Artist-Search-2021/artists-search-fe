@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
+import { Switch, Redirect, Route } from 'react-router-dom';
 import ArtistReleases from '../display/ArtistReleases';
 import ReleaseDetail from '../display/ReleaseDetail';
 import SongLyrics from '../display/SongLyrics';
