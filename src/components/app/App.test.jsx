@@ -8,21 +8,21 @@ jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
 
-    'pathname': '/release/21e8c81d-6d12-48a9-ad47-b371ca2c166b',
-    'search': '',
-    'hash': '',
-    'state': {
-      'artistName': {
-        'pathname': '/artist/0743b15a-3c32-48c8-ad58-cb325350befa',
-        'state': {
-          'artistName': 'blink‐182'
+    pathname: '/release/21e8c81d-6d12-48a9-ad47-b371ca2c166b',
+    search: '',
+    hash: '',
+    state: {
+      artistName: {
+        pathname: '/artist/0743b15a-3c32-48c8-ad58-cb325350befa',
+        state: {
+          artistName: 'blink‐182'
         },
-        'search': '',
-        'hash': '',
-        'key': 'fzjh2b'
+        search: '',
+        hash: '',
+        key: 'fzjh2b'
       }
     },
-    'key': '97cgva'
+    key: '97cgva'
   })
 }));
 
