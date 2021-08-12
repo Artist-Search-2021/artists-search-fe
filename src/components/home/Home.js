@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ArtistList from '../display/ArtistList';
 import Loading from '../common/Loading';
-import Search from '../controls/SearchBar.js';
+import Search from '../controls/Search.js';
 import { fetchArtists } from '../../services/artistApi.js';
 
 export default function Home() {
