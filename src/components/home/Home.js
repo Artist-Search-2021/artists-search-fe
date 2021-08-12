@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import ArtistList from '../../display/ArtistList';
-import Loading from '../../common/Loading';
-import Search from '../../controls/Search';
-import { fetchArtists } from '../../../services/artistApi.js';
+import ArtistList from '../display/ArtistList';
+import Loading from '../common/Loading';
+import Search from '../controls/Search';
+import { fetchArtists } from '../../services/artistApi.js';
 
 export default function Home() {
   const [page, setPage] = useState(0);

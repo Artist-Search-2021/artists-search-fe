@@ -5,7 +5,7 @@ import ArtistReleases from '../display/ArtistReleases';
 import ReleaseDetail from '../display/ReleaseDetail';
 import SongLyrics from '../display/SongLyrics';
 import Header from '../common/Header';
-import Home from '../home/Home/Home';
+import Home from '../home/Home';
 
 export default function App() {
   return (<div className="App">
