@@ -27,13 +27,13 @@ export default function SongLyrics() {
   const { id } = useParams();
   const artistName = useLocation();
   const name = artistName.state.artistName;
-
+  console.log(name);
   const classes = useStyles();
 
   useEffect(() => {
     fetchLyrics(name, id)
       .then(lyrics => setLyrics(lyrics))
-      .finally(() => setLoading(false));
+      .finally(setLoading(false));
   }, []);
 
   if (loading) return <Loading />;
