@@ -10,20 +10,13 @@ export default function Home() {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearch] = useState('');
-  const { id } = useParams();
+
   useEffect(() => {
     if(searchTerm !== '') {
       setLoading(true);
       fetchArtists(page, searchTerm).then(setArtists).finally(setLoading(false));
     }
   }, [page]);
-  useEffect(() => {
-    if(id) {
-      setLoading(true);
-      setSearch(id);
-      fetchArtists(page, id).then(setArtists).finally(setLoading(false));
-    }
-  }, []);
 
   const handleSearch = (searchTerm) => {
     setLoading(true);
